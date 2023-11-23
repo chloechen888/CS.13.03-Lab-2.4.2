@@ -1,12 +1,69 @@
 import java.util.Arrays;
 
 public class CISStack {
-
     // Array property.
+    private Integer[] stack;
+
+
 
     // Size property.
-
+    private int size;
     // Pointer property
+    private int pointer;
+
+    // Constructor.
+    public CISStack(int maxSize) {
+        this.stack = new Integer[maxSize];
+        this.size = 0;
+        this.pointer = -1;
+    }
+
+
+    public void push(int s)
+    {
+            pointer++;
+            stack[pointer] = s;
+            size++;
+    }
+
+    public int pop()
+    {
+        int poppedValue = stack[pointer];
+            pointer--;
+            size--;
+            return poppedValue;
+
+
+    }
+
+    public boolean isEmpty()
+    {
+        return pointer==-1;
+    }
+
+    public int size()
+    {
+        return size;
+    }
+
+    @Override
+    public String toString() {
+        return "CISStack{" +
+                "stack=" + Arrays.toString(stack) +
+                ", size=" + size +
+                ", pointer=" + pointer +
+                '}';
+    }
+
+
+
+
+
+
+
+
+
+
 
     // Constructor.
 
